@@ -30,7 +30,7 @@ const server = http.createServer(app);
 
 sequelize
   .authenticate()
-  // .then(() => sequelize.sync())
+  .then(() => sequelize.sync())
   .then(() => {
     server.listen(port);
   })
