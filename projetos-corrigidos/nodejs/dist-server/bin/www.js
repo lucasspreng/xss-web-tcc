@@ -34,8 +34,9 @@ var server = _http["default"].createServer(_app["default"]);
  */
 
 
-_db["default"].authenticate() // .then(() => sequelize.sync())
-.then(function () {
+_db["default"].authenticate().then(function () {
+  return _db["default"].sync();
+}).then(function () {
   server.listen(port);
 })["catch"](onError);
 
